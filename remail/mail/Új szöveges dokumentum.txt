@@ -1,0 +1,7 @@
+            SmtpClient mailClient = new SmtpClient("smtp.gmail.com", 587);
+            mailClient.EnableSsl = true;
+            mailClient.Credentials = new NetworkCredential("daemon.hotelmental", "Mentalhigi5");
+            mailClient.Send(honnan,
+                            hova,
+                            targy,
+                            szoveg);

@@ -7,11 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace mail
 {
-    public partial class mail : System.Web.UI.Page
+    public partial class asd : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void tovabb_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/mail.aspx");
         }
     }
 }
