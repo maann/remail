@@ -16,7 +16,7 @@ namespace mail
 
         protected void tovabb_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/mail.aspx");
+            Response.Redirect("~/asd.aspx");
         }
     }
 }
