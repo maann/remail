@@ -4,14 +4,34 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web;
 using RestSharp;
 
 namespace mail
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        public static void SendSimpleMessage()
+        string[] bemutatkozok = new string[] 
+        {
+        "Kedves látogató! Eszter vagyok, harmadéves pszichológia szakos hallgató. Sajnos én \n is észrevettem, hogy ebben a rohanó világban a legnagyobb probléma, hogy az \n embereknek nincs idejük egymásra, nincs idejük beszélgetni. Nekem viszont van, \n és szívesen megosztom veled! Ha szeretnél tanácsot kérni, beszélgetni, vagy csak arra \n vágysz, hogy valaki meghallgasson, keress meg bátran!",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"};
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            bemutatkozas.Text = segitok.SelectedIndex.ToString();
+        }
+
+        protected void kuld_Click(object sender, EventArgs e)
+        {
+            SendSimpleMessage(Tnev.Text,mailcim.Text, segitok.SelectedValue);
+        }
+        public static void SendSimpleMessage(string nev, string cim, string segito)
         {
             RestClient client = new RestClient();
             client.BaseUrl = "https://api.mailgun.net/v2";
@@ -22,20 +42,18 @@ namespace mail
             request.AddParameter("domain",
                                  "happynet.mailgun.org", ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
-            request.AddParameter("from", "Excited User <daemon@happynet.mailgun.org>");
-            request.AddParameter("to", "v.mark.mario@gmail.com");
-            request.AddParameter("subject", "Hello");
+            request.AddParameter("from", nev+" <"+cim+">");
+            request.AddParameter("to",segito);
+            request.AddParameter("subject", nev+" segítségre vár!");
             request.AddParameter("text", "Testing some Mailgun awesomness!");
             request.Method = Method.POST;
             client.Execute(request);
         }
-        protected void Page_Load(object sender, EventArgs e)
+
+        protected void segitok_SelectedIndexChanged(object sender, EventArgs e)
         {
+            bemutatkozas.Text = bemutatkozok[segitok.SelectedIndex];
         }
 
-        protected void kuld_Click(object sender, EventArgs e)
-        {
-            SendSimpleMessage();
-        }
     }
 }
