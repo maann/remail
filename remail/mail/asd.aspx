@@ -5,6 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style>
+        h5.pos_right
+{
+position:relative;
+left:200px;
+}
+    </style>
 </head>
 <body style="color: #FFFFFF; background-color: #0099FF">
     <form id="form1" runat="server">
@@ -34,21 +41,21 @@
                   <asp:ListItem Value="barbi.hotelmental@gmail.com">Barbi</asp:ListItem>
              </asp:RadioButtonList>
            </asp:TableCell>
-           <asp:TableCell Width="400" HorizontalAlign="Right">
+           <asp:TableCell Width="400" HorizontalAlign="center">
              <asp:TextBox runat="server" ID="Tnev" Width="300" ></asp:TextBox>
            </asp:TableCell>
-           <asp:TableCell HorizontalAlign="Left" Width="350" RowSpan="5">
-             <asp:Label runat="server" ID="bemutatkozas" Text=""></asp:Label>
+           <asp:TableCell HorizontalAlign="Left" Width="350" RowSpan="5" >
+             <h5><asp:Label runat="server" ID="bemutatkozas" Text=""></asp:Label></h5>
            </asp:TableCell>
      </asp:TableRow>
      <asp:TableRow>
-         <asp:TableCell Width="400" HorizontalAlign="Right">
+         <asp:TableCell Width="400" HorizontalAlign="Center">
              <asp:TextBox runat="server" ID="mailcim" width="300"></asp:TextBox>
          </asp:TableCell>
      </asp:TableRow>
      <asp:TableRow>
-         <asp:TableCell>
-             <asp:TextBox runat="server" ID="uzenet"></asp:TextBox>
+         <asp:TableCell HorizontalAlign="Center">
+             <asp:TextBox runat="server" ID="uzenet" Height="300" Width="400"></asp:TextBox>
          </asp:TableCell>
      </asp:TableRow>
      <asp:TableRow>

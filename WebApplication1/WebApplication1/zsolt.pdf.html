@@ -1,0 +1,52 @@
+<!doctype html>
+	<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<style type="text/css" media="screen">
+				html, body	{ height:100%; }
+				body { margin:0; padding:0; overflow:auto; }
+				#flashContent { display:none; }
+			</style>
+			<link rel="stylesheet" type="text/css" href="css/flexpaper.css" />
+			<script type="text/javascript" src="js/jquery.min.js"></script>
+			<script type="text/javascript" src="js/jquery.extensions.min.js"></script>
+			<script type="text/javascript" src="js/flexpaper.js"></script>
+			<script type="text/javascript" src="js/flexpaper_handlers.js"></script>
+		</head>
+		<body>
+		<div id="documentViewer" class="flexpaper_viewer" style="position:absolute;width:70%;height:70%"></div>
+		<script type="text/javascript">
+			$('#documentViewer').FlexPaperViewer(
+						                  	 { config : {
+														   
+							                     SWFFile : 'docs/Kerékgyártó Zsolt - Eufória.pdf.swf',
+							                     JSONFile : 'docs/Kerékgyártó Zsolt - Eufória.pdf.js',
+														   						
+							                     Scale : 0.6,
+							                     ZoomTransition : 'easeOut',
+							                     ZoomTime : 0.5,
+							                     ZoomInterval : 0.2,
+							                     FitPageOnLoad : false,
+							                     FitWidthOnLoad : true,
+							                     AutoAdjustPrintSize : true,
+							                     PrintPaperAsBitmap : false,
+							                     FullScreenAsMaxWindow : false,
+							                     ProgressiveLoading : false,
+							                     MinZoomSize : 0.3,
+							                     MaxZoomSize : 5,
+							                     SearchMatchAll : false,
+							                     InitViewMode : 'Portrait',
+							                     StartAtPage : 1,
+														   						
+							                     ViewModeToolsVisible : false,
+							                     ZoomToolsVisible : false,
+							                     NavToolsVisible : false,
+							                     CursorToolsVisible : false,
+							                     SearchToolsVisible : false,
+							                     WMode : 'window',
+							                     localeChain: 'Hungarian'
+							                   }}
+							            );
+		</script>
+		</body>
+	</html>
