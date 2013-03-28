@@ -12,8 +12,12 @@
         <asp:Table runat="server" Width="810" HorizontalAlign="Center">
             <asp:TableHeaderRow>
                 <asp:TableHeaderCell>
-                    <asp:Image BorderStyle="None" runat="server" ImageUrl="~/kep/logokorfix.jpg" />
+                    <asp:Image BorderStyle="None" runat="server" ImageUrl="~/kep/logo.png" />
                 </asp:TableHeaderCell>
+                                <asp:TableHeaderCell>
+                    <asp:Image ID="Image1" BorderStyle="None" runat="server" ImageUrl="~/Images/logo.png" />
+                </asp:TableHeaderCell>
+
             </asp:TableHeaderRow>
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign ="Center">
